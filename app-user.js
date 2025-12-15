@@ -1,4 +1,4 @@
-const WORKER_URL = "https://lotto-api.loto09090909.workers.dev";
+const WORKER_URL = "https://lotto-api.ni041372.workers.dev";
 
 function normalize(nums) {
   const used = new Set();
