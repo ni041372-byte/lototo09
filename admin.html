@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Panel (Test Mode)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container" id="admin-auth">
+  <h2>관리자 인증</h2>
+  <input id="admin-code" placeholder="관리자 코드" type="password" style="
+    width: 385px;
+">
+  <button onclick="adminLogin()">입장</button>
+</div>
+
+<div id="admin-view" class="hidden">
+  <h2>알고리즘 관리</h2>
+
+  <textarea id="algo-json" style="width:100%;height:200px"></textarea>
+
+  <button onclick="testAlgo()">테스트</button>
+  <button onclick="applyAlgo()">적용</button>
+
+  <h3>테스트 결과</h3>
+  <pre id="test-result"></pre>
+      <div class="container" id="security-section" style="margin-top:30px;">
+    <h2>사용자 접속 코드 변경</h2>
+  
+    <input id="new-user-code" placeholder="새 사용자 입장 코드 입력" />
+  
+    <button onclick="updateUserCode()">
+      사용자 코드 변경
+    </button>
+  
+    <p style="text-align:center;color:#888;margin-top:10px;font-size:13px;">
+      ※ 관리자 코드(admin_code)는 보안을 위해 변경할 수 없습니다.
+    </p>
+  </div>
+</div>
+
+  
+<script src="ui.js"></script>
+<script src="app-admin.js"></script>
+</body>
+</html>

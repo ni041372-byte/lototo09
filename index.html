@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Lotto Generator (Test Mode)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container" id="auth-view">
+  <h2>접속 인증</h2>
+  <input id="auth-input" placeholder="보안코드 입력" type="password" style="
+    width: 385px;
+">
+  <button onclick="userLogin()">입장</button>
+</div>
+
+<div class="container hidden" id="main-view">
+  <h2>날짜 선택</h2>
+  <select id="date-select"></select>
+  <button onclick="beginGenerate()">번호 생성</button>
+</div>
+
+<div class="container hidden" id="loading-view">
+  <h2>번호 분석중…</h2>
+  <div class="loading-spinner"></div>
+
+  <p style="text-align:center;font-size:16px;margin-top:12px;">
+    <b id="loading-count">--</b>
+  </p>
+
+  <div id="loading-text" style="
+    margin-top:18px;
+    text-align:center;
+    font-size:15px;
+    color:#555;
+    line-height:1.5;
+    min-height:48px;
+    transition: opacity 0.3s ease;
+  ">
+    <!-- 단계별 메시지가 여기에 출력 -->
+  </div>
+</div>
+
+<div class="container hidden" id="result-view">
+  <div id="date-info" style="
+    margin-top:20px;
+    margin-bottom:15px;
+    text-align:center;
+    font-size:18px;
+    line-height:1.6;
+    color:#333;
+    font-weight:600;
+"></div>
+  <h2>생성된 번호</h2>
+  <div id="result-box"></div>
+  <button onclick="goHome()">다시 선택하기</button>
+</div>
+
+<script src="ui.js"></script>
+<script src="app-user.js"></script>
+</body>
+</html>

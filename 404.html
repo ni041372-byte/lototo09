@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="refresh" content="0;URL=./#redirect">
+  <script>
+    // GitHub Pages가 404.html을 로드하면 자동으로 여기에 들어옴
+
+    // 1) 인증 여부 확인
+    const authed = sessionStorage.getItem("user-auth") === "yes";
+
+    if (!authed) {
+      // 인증 안된 경우 → 인증 페이지로 이동
+      window.location.replace("./index.html#auth");
+    } else {
+      // 인증 되어 있으면 → index.html로 돌려보내서 SPA 라우팅
+      window.location.replace("./index.html");
+    }
+  </script>
+</head>
+<body>
+</body>
+</html>
