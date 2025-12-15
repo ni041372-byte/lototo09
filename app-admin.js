@@ -3,7 +3,7 @@
 // ================================
 
 // ⚠️ 본인의 Worker URL로 교체하세요
-const WORKER_URL = "https://lotto-api.loto09090909.workers.dev";
+const WORKER_URL = "https://lotto-api.ni041372.workers.dev";
 
 // ENTER KEY SUPPORT
 document.addEventListener("DOMContentLoaded", () => {
