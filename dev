@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>ESTABLISHING UPLINK...</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #00ff41;
+            font-family: 'Consolas', 'Courier New', monospace;
+            padding: 30px;
+            font-size: 14px;
+        }
+        .log { margin-bottom: 5px; }
+        .blink { animation: blink 0.5s infinite; }
+        @keyframes blink { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
+    </style>
+</head>
+<body>
+    <div id="console"></div>
+    
+    <script>
+        const targetUrl = "https://tt-ae9.pages.dev/"; // 이동할 진짜 주소
+        const consoleDiv = document.getElementById('console');
+        
+        const logs = [
+            "Initiating secure handshake protocol...",
+            "Requesting uplink to [DEV.NODE_AE9]...",
+            "Authentication token verified.",
+            "Bypassing public DNS resolver...",
+            "Allocating bandwidth...",
+            ">> CONNECTION ESTABLISHED."
+        ];
+
+        let i = 0;
+
+        function showLog() {
+            if (i < logs.length) {
+                const div = document.createElement('div');
+                div.className = 'log';
+                
+                // 마지막 줄은 깜빡이게 처리
+                if (i === logs.length - 1) {
+                    div.innerHTML = logs[i] + " <span class='blink'>_</span>";
+                    div.style.color = "#adff2f"; // 밝은 연두색
+                    div.style.fontWeight = "bold";
+                } else {
+                    div.textContent = `[SYSTEM] ${logs[i]}`;
+                }
+                
+                consoleDiv.appendChild(div);
+                i++;
+                
+                // 로그 나오는 속도 랜덤 (리얼함)
+                setTimeout(showLog, 200 + Math.random() * 400); 
+            } else {
+                // 로그 다 나오면 0.8초 뒤에 진짜 이동
+                setTimeout(() => {
+                    window.location.href = targetUrl;
+                }, 800);
+            }
+        }
+
+        showLog();
+    </script>
+</body>
+</html>
