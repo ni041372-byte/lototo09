@@ -104,7 +104,7 @@ function beginGenerate() {
   }, 1400);
 
   setTimeout(() => {
-    remainingSeconds = Math.floor(Math.random() * (5 - 1 + 1)) + 1;
+    remainingSeconds = Math.floor(Math.random() * (5 - 180 + 1)) + 1;
 
     loadingText.innerText = `분석 예상 시간: ${remainingSeconds}초`;
 
